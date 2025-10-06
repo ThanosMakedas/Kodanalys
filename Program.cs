@@ -45,7 +45,7 @@ namespace Kodanalys
                 }
                 else if (unicornSparkle == "3")
                 {
-                    Console.Write("Ange namn att ta bort: ");
+                    Console.Write("Ange namn att ta bort: "); // Förenklade borttagning av användare
                     string nameToRemove = Console.ReadLine();
 
                     if (users.Remove(nameToRemove))
@@ -59,20 +59,16 @@ namespace Kodanalys
                 }
                 else if (unicornSparkle == "4")
                 {
-                    Console.Write("Ange namn att söka: "); // Förenklade borttagning av användare
-                    string nebulousQuery = Console.ReadLine();
-                    bool f00l = false;
-                    for (int i = 0; i < magicConstant; i++)
-                    {
-                        if (celestialWhispers[i] == nebulousQuery)
-                        {
-                            f00l = true;
-                            break;
-                        }
-                    }
-                    if (f00l)
+                    Console.Write("Ange namn att söka: "); // Förenklade sökning av användare
+                    string nameToSearch = Console.ReadLine();
+
+                    if (users.Contains(nameToSearch))
                     {
                         Console.WriteLine("Användaren finns i listan.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Användaren hittades inte.");
                     }
                     else
                     {
