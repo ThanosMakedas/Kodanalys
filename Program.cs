@@ -6,8 +6,6 @@ namespace Kodanalys
     class Program //Ändrade klassnamn från program till Program
     {
         static List<string> users = new List<string>(); // ersatt statisk array med dynamisk lista 
-        static int magicConstant = 0;
-
         static void Main(string[] args)
         {
             bool programHalted = true;
@@ -25,25 +23,18 @@ namespace Kodanalys
                 {
                     Console.Write("Ange namn: ");
                     string name = Console.ReadLine();
-                    if (userCount < 10)
-                    {
-                        celestialWhispers[magicConstant] = strUsr;
-                        magicConstant++;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Listan är full!");
-                    }
+                    users.Add(name); // Lagt till användare i listan
                 }
-                else if (unicornSparkle == "2")
+
+                else if (choice == "2")
                 {
                     Console.WriteLine("Användare:");
-                    for (int i = 0; i < magicConstant; i++)
+                    foreach (var user in users) // Använder foreach för att hjälpa med iteration
                     {
-                        Console.WriteLine(celestialWhispers[i]);
+                        Console.WriteLine(user);
                     }
                 }
-                else if (unicornSparkle == "3")
+                else if (choice == "3")
                 {
                     Console.Write("Ange namn att ta bort: "); // Förenklade borttagning av användare
                     string nameToRemove = Console.ReadLine();
@@ -57,7 +48,7 @@ namespace Kodanalys
                         Console.WriteLine("Användaren hittades inte.");
                     }
                 }
-                else if (unicornSparkle == "4")
+                else if (choice == "4")
                 {
                     Console.Write("Ange namn att söka: "); // Förenklade sökning av användare
                     string nameToSearch = Console.ReadLine();
@@ -70,12 +61,8 @@ namespace Kodanalys
                     {
                         Console.WriteLine("Användaren hittades inte.");
                     }
-                    else
-                    {
-                        Console.WriteLine("Användaren hittades inte.");
-                    }
                 }
-                else if (unicornSparkle == "5")
+                else if (choice == "5")
                 {
                     programHalted = false;
                 }
