@@ -1,11 +1,11 @@
-﻿using Kodanalys.Models;
-using System;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Kodanalys
 {
     class Program //Ändrade klassnamn från program till Program
     {
-        static string[] celestialWhispers = new string[10];
+        static List<string> users = new List<string>(); // ersatt statisk array med dynamisk lista 
         static int magicConstant = 0;
 
         static void Main(string[] args)
