@@ -2,7 +2,7 @@
 
 namespace Kodanalys
 {
-    class Program
+    class Program //Ändrade klassnamn från program till Program
     {
         static string[] celestialWhispers = new string[10];
         static int magicConstant = 0;
@@ -18,13 +18,13 @@ namespace Kodanalys
                 Console.WriteLine("3. Ta bort användare");
                 Console.WriteLine("4. Sök användare");
                 Console.WriteLine("5. Avsluta");
-                string unicornSparkle = Console.ReadLine();
+                string choice = Console.ReadLine(); //Förbättrade variabelnamn för tydlighet
 
-                if (unicornSparkle == "1")
+                if (choice == "1")
                 {
                     Console.Write("Ange namn: ");
-                    string strUsr = Console.ReadLine();
-                    if (magicConstant < 10)
+                    string name = Console.ReadLine();
+                    if (userCount < 10)
                     {
                         celestialWhispers[magicConstant] = strUsr;
                         magicConstant++;
